@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="icon" href="https://cdn.pixabay.com/photo/2021/03/05/19/20/numbers-6072134_960_720.png">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Tabuada dos Guri da Dell </title>
+
+    <script>
+
+        function gerarTabuada() {
+            var numero = parseInt(document.getElementById('numero').value);
+            var tabela = document.getElementById('tabela-tabuada');
+
+            tabela.innerHTML = ""
+
+            for (var i = 1; i <= 10; i++) {
+                var resultado = numero * i
+                var linha = "<tr><td>" + numero + " X " + i + "</td></tr>" + "= " + resultado + "</td></tr>";
+
+                tabela.innerHTML += linha
+            }
+        }
+
+        function limpar() {
+            var tabela = document.getElementById('tabela-tabuada');
+            tabela.innerHTML = " ";
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <header id="head">
+        <h1> Tabuada dos Guri da Dell </h1>
+    </header>
+    
+    <p> Digite um valor para gerar sua tabuada </p>
+
+    <input type="text" id="numero">
+    <button onclick="gerarTabuada()"> Gerar Tabuada </button>
+
+    <button onclick="limpar()"> Limpar </button>
+
+    <button onclick="dark-mode()" id="toggle-mode"> Morning / Night </button>
+
+    <table class="tabela" id="tabela-tabuada"></table>
+
+</body>
+<script src="main.js"></script>
+
+<footer>
+        <small>
+            Design by Daniel Alves &copy; | <a href="https://www.instagram.com/danieldoinsta/"> Instagram </a> </small>
+    </footer>
+
+</html>
